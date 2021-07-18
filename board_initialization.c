@@ -37,10 +37,14 @@ void    board_initialization(int **target_view, int N)
         y = 0;
         x++;
     }
+
+
     //Adjust z values base on clues by removing non usable values
     
-
+void coldown_edge_clue_init(int **target_view, int ***possible_values, int N);
     //For colDown clues we only look at the top target views (target_views[0][x]) and we look down (d is y)
+    x = 0;
+    y = 0;
     while (x < N)
     {
         while (y < N)
@@ -61,7 +65,11 @@ void    board_initialization(int **target_view, int N)
         y = 0;
         x++;
     }
+
+void colup_edge_clue_init(int **target_view, int ***possible_values, int N);
      //For colUp clues we only look at the bottom target views (target_view[n-1][x] and we look up (d is N - 1 - y)
+    x = 0;
+    y = 0;
     while (x < N)
     {
         while (y < N)
@@ -83,7 +91,10 @@ void    board_initialization(int **target_view, int N)
         x++;
     }
 
+void colleft_edge_clue_init(int **target_view, int ***possible_values, int N);
     //For colLeft clues we only look at the left target views (target_view[y][0] and we look right (d is x)
+    x = 0;
+    y = 0;
     while (x < N)
     {
         while (y < N)
@@ -105,7 +116,10 @@ void    board_initialization(int **target_view, int N)
         x++;
     }
 
+void colright_edge_clue_init(int **target_view, int ***possible_values, int N);
      //For colRight clues we only look at the right target views (target_view[y][N-1] and we look left (d is N - 1 - x)
+    x = 0;
+    y = 0;
     while (x < N)
     {
         while (y < N)
@@ -129,9 +143,11 @@ void    board_initialization(int **target_view, int N)
 
     //After running the entire board through possible_values algorithms, go back and check for N and 1 clues to set them as guaranteed values
   
+void coldown_clue1_set(int **target_view, int ***possible_values, int N); 
     //For colDown clues we only look at the top target views (target_view[0][x] and we look down
     //We are only looking at edge clues so we only check the top row by setting y to 0 
     //We also only iterate x for one row
+    x = 0;
     y = 0;
     while (x < N)
     {   //If clue is one
@@ -151,10 +167,11 @@ void    board_initialization(int **target_view, int N)
 
 
 
-
+void colup_clue1_set(int **target_view, int ***possible_values, int N);
     //For colUp clues we only look at the bottom target views (target_view[N - 1][x] and we look up
     //We are only looking at edge clues so we only check the bottom row by setting y to N - 1
     //We also only iterate x for one row
+    x = 0;
     y = N - 1;
     while (x < N)
     {     //If clue is one
@@ -173,10 +190,11 @@ void    board_initialization(int **target_view, int N)
     }
 
 
-
+void colleft_clue1_set(int **target_view, int ***possible_values, int N);
     //For colLeft clues we only look at the left target views (target_view[y][0] and we look left
     //We are only looking at edge clues so we only check the right column by setting x to 0
     x = 0;
+    y = 0;
     while (y < N)
     {   //If clue is one
         if ((target_view[y][x] == 1))
@@ -193,10 +211,11 @@ void    board_initialization(int **target_view, int N)
         y++;
     }
    
-
+void colright_clue1_set(int **target_view, int ***possible_values, int N);
     //For colRight clues we only look at the right target views (target_view[y][N-1] and we look left
     //We are only looking at edge clues so we only check the right column by setting x to N - 1
     x = N - 1;
+    y = 0
     while (y < N)
     {   //If clue is one
         if ((target_view[y][x] == 1))
@@ -215,7 +234,8 @@ void    board_initialization(int **target_view, int N)
 
 
     //Finally if we encounter a clue of N we need to set the guaranteed values
-    
+
+void coldown_clueN_set(int **target_view, int ***possible_values, int N);
     //For colDown clues we only look at the top target views (target_view[0][x]) and we look down
     //We are only looking at edge clues so we only check the top column by setting y to 0
     x = 0;
@@ -245,6 +265,7 @@ void    board_initialization(int **target_view, int N)
         x++;
     }
 
+void colup_clueN_set(int **target_view, int ***possible_values, int N);
     //For colUp clues we only look at the bottom target views (target_view[N - 1][x]) and we look up
     //We are only looking at edge clues so we only check the bottom column by setting y to N - 1
     x = 0;
@@ -274,6 +295,7 @@ void    board_initialization(int **target_view, int N)
         x++;
     }
 
+void colleft_clueN_set(int **target_view, int ***possible_values, int N);
     //For colLeft clues we only look at the left target views (target_view[y][0]) and we look right
     //We are only looking at edge clues so we only check the right column by setting x to 0
     x = 0;
@@ -302,6 +324,8 @@ void    board_initialization(int **target_view, int N)
         }
         y++;
     }
+
+void colright_clueN_set(int **target_view, int ***possible_values, int N);
     //For colRight clues we only look at the right target views (target_view[y][N-1]) and we look left
     //We are only looking at edge clues so we only check the right column by setting x to N - 1
     x = N - 1;
@@ -331,7 +355,7 @@ void    board_initialization(int **target_view, int N)
         y++;
     }
 
-//SPLIT OUT ALL THESE FUNCTIONS
+//SPLIT OUT ALL THESE FUNCTIONS, DOES PUSH WORK!?
 
 
 // This expression will allow us to set the possible values for any location on our board
