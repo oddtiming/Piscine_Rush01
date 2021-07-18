@@ -331,6 +331,7 @@ void    board_initialization(int **target_view, int N)
         y++;
     }
 
+//SPLIT OUT ALL THESE FUNCTIONS
 
 
 // This expression will allow us to set the possible values for any location on our board
