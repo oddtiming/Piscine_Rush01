@@ -6,16 +6,17 @@ put_value       //to add a block with a certain height at position (x,y)
 Ideas:
 is_valid_value  //to check if a given value can be put at this position.
 determine_next_pos //to determine where will be the next digit to iterate
-determine_next_digit
 
 
 Doing :
+(isma) determine_next_cell // to see which cell is the next to test
 (isma) test_main       //to have a fixed board where we know the outcome
 
 Done :
 (isma) view_count      //to calculate the current_view matrix.
 (isma) print_board     //to actually output the board we have
 (isma) is_solution     //to see if current_view == target_view, should return 1 if it is.
+(isma) update_possible_values //to remove a given value from the peers' possible values
 (Jon) arg_check        //to see if the command line input is valid
     valid_character_and_argc_check
 (Jon) find_board_size  //to find the board size based on the command line input
@@ -43,6 +44,9 @@ THINGS THAT NEED TO BE TESTED:
 
 - Check if spaces in command line argument 
 
+- Verify if we need to check row/column validity once it's completed
+
+- number of arguments should be N * 4
 
 
 
