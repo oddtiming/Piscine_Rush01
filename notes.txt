@@ -5,6 +5,8 @@ Functions to be done:
 put_value       //to add a block with a certain height at position (x,y) 
 Ideas:
 is_valid_value  //to check if a given value can be put at this position.
+determine_next_pos //to determine where will be the next digit to iterate
+determine_next_digit
 
 
 Doing :
