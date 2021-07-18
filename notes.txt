@@ -1,0 +1,50 @@
+THIS FILE IS FOR TAKING NOTES ABOUT THE WHOLE PROGRAM!!!!
+
+Functions to be done:
+
+put_value       //to add a block with a certain height at position (x,y) 
+Ideas:
+is_valid_value  //to check if a given value can be put at this position.
+
+
+Doing :
+(isma) test_main       //to have a fixed board where we know the outcome
+
+Done :
+(isma) view_count      //to calculate the current_view matrix.
+(isma) print_board     //to actually output the board we have
+(isma) is_solution     //to see if current_view == target_view, should return 1 if it is.
+(Jon) arg_check        //to see if the command line input is valid
+    valid_character_and_argc_check
+(Jon) find_board_size  //to find the board size based on the command line input
+(Jon) put_matrix       //to put the command line input into target_view and set base conditions for board and current_view
+(Jon)  
+
+
+____________________________________________________________________________________________________________________
+THIS SECTION IS FOR WRITING VARIABLE AND ARRAY NAMES AND CONVENTIONS SO WE CAN ALL BE ON THE SAME PAGE
+
+Our 3 matrices are called:
+board
+target_view
+current_view
+
+When accessing any of our matrices the convention is as follows:
+
+matrix[y][x]
+
+y is always vertical (which row you are looking at), x is always horizontal (which column you are looking at)
+
+
+______________________________________________________________________________________________________________________
+THINGS THAT NEED TO BE TESTED:
+
+- Check if spaces in command line argument 
+
+
+
+
+
+RECURSIVE FUNCTION SHOULD RETURN 1 IF IT FINDS A SOLUTION, OR O IF NOT SO WE CAN TRACK AND UPDATE WHAT WE HAVE ALREADY TRIED
+
+WE COULD BE PASSED VIEW VALUES OF 0 (NOT KNOWN) MAYBE CHANGE CODE TO ACCEPT THESE PUZZLES?
